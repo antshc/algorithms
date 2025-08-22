@@ -1,0 +1,95 @@
+= Dynamic Programming Glossary
+
+== Core Concepts
+
+* *Dynamic Programming (DP)*  
+A method for solving complex problems by breaking them down into simpler subproblems, solving each once, and reusing those solutions.
+
+* *Optimal Substructure*  
+A property where the solution to a problem can be constructed from the solutions of its subproblems.
+
+* *Overlapping Subproblems*  
+A property where the same subproblems are solved multiple times in the naive approach, making caching/memoization useful.
+
+* *Subproblem*  
+A smaller instance of the main problem, often solved recursively or iteratively.
+
+* *State*  
+A set of variables that uniquely define a subproblem. Example: in the Fibonacci problem, the state is the index `n`.
+
+* *State Transition*  
+The relationship (recurrence relation) that connects a state to its subproblems. Example: `dp[n] = dp[n-1] + dp[n-2]`.
+
+* *Recurrence Relation*  
+A mathematical formula that defines the solution of a problem in terms of smaller subproblems.
+
+== Techniques
+
+* *Top-Down DP (Memoization)*  
+Solve the problem recursively, storing results of subproblems in a cache (usually a dictionary or array) to avoid recomputation.
+
+* *Bottom-Up DP (Tabulation)*  
+Iteratively compute subproblem solutions in a table, usually starting from the smallest subproblems and building up.
+
+* *Space Optimization*  
+Reducing memory usage by reusing previous results instead of storing the entire DP table. Example: computing Fibonacci with two variables.
+
+* *Transition Function*  
+The logic/formula used to compute a new state from previous states in DP.
+
+== Common DP Problem Types
+
+* *Fibonacci-type*  
+Problems that build on the idea of previous results (e.g., Fibonacci numbers, climbing stairs).
+
+* *Knapsack Problem*  
+Optimization problem where you maximize/minimize value under capacity constraints.
+
+* *Longest Common Subsequence (LCS)*  
+Finding the longest subsequence present in two sequences.
+
+* *Edit Distance (Levenshtein Distance)*  
+Minimum number of edits (insertions, deletions, substitutions) to convert one string into another.
+
+* *Matrix Chain Multiplication*  
+Finding the optimal way to multiply matrices with minimal operations.
+
+* *Coin Change / Minimum Coin Problem*  
+Finding the minimum coins needed to make a value, or the number of ways to form a value.
+
+* *Partition Problems*  
+Splitting an array into parts to minimize/maximize some property (e.g., partition equal subset sum).
+
+* *Interval DP*  
+DP where subproblems are defined over intervals/ranges (common in string and matrix problems).
+
+* *Digit DP*  
+Solving problems involving digits of numbers with constraints (commonly in competitive programming).
+
+== Practical Terms
+
+* *DP Table / Array*  
+A data structure (usually 1D or 2D) used to store subproblem results.
+
+* *Initialization*  
+Base cases set in the DP table before applying the recurrence relation.
+
+* *Base Case*  
+The smallest, simplest subproblem with a known answer (e.g., `F(0)=0`, `F(1)=1` in Fibonacci).
+
+* *Transition Complexity*  
+How much work is done when computing one DP state. Total complexity = (#states × transition complexity).
+
+* *Time Complexity of DP*  
+Usually expressed as `O(#states × transition complexity)`.
+
+* *Memo Table / Cache*  
+Data structure (hash map, dictionary, or array) storing solutions to already-solved subproblems in Top-Down DP.
+
+== How to Apply DP
+
+1. *Identify states* (what defines a subproblem).  
+2. *Define recurrence relation* (state transitions).  
+3. *Choose an approach* (Top-Down or Bottom-Up).  
+4. *Set base cases and initialize table/cache*.  
+5. *Optimize space/time if possible*.
